@@ -3,7 +3,9 @@ import githubReducer from "./GithubReducer";
 
 
 const GithubContext = createContext()
-
+//NOTE: Here You Have To Use your own personal token 
+//otherwise it won't goona work
+//You will not goona see any individual user Output!!!
 const GITHUB_URLL = process.env.REACT_APP_GITHUB_URLL
 const GITHUB_TOKENN = process.env.REACT_APP_GITHUB_TOKENN
 
