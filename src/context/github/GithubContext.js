@@ -4,8 +4,8 @@ import githubReducer from "./GithubReducer";
 
 const GithubContext = createContext()
 
-const GITHUB_URL = process.env.REACT_APP_GITHUB_URL
-const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN
+const GITHUB_URLL = process.env.REACT_APP_GITHUB_URLL
+const GITHUB_TOKENN = process.env.REACT_APP_GITHUB_TOKENN
 
 export const GithubProvider =({children})=>{
    
@@ -28,10 +28,10 @@ const [state,dispatch] = useReducer(githubReducer, initialState)
         const params = new URLSearchParams({
             q: text
         })
-        const response = await fetch(`${GITHUB_URL}/search/users?${params}`,
+        const response = await fetch(`${GITHUB_URLL}/search/users?${params}`,
         {
             headers:{
-                Authorization:`token ${GITHUB_TOKEN}`
+                Authorization:`token ${GITHUB_TOKENN}`
             }
         })
         const {items} = await response.json()
@@ -50,10 +50,10 @@ const [state,dispatch] = useReducer(githubReducer, initialState)
         setLoading()
 
         
-        const response = await fetch(`${GITHUB_URL}/users/${login}`,
+        const response = await fetch(`${GITHUB_URLL}/users/${login}`,
         {
             headers:{
-                Authorization:`token ${GITHUB_TOKEN}`
+                Authorization:`token ${GITHUB_TOKENN}`
             }
         })
 
@@ -78,10 +78,10 @@ const [state,dispatch] = useReducer(githubReducer, initialState)
         })
     
         const response = await fetch(
-          `${GITHUB_URL}/users/${login}/repos?${params}`,
+          `${GITHUB_URLL}/users/${login}/repos?${params}`,
           {
             headers: {
-              Authorization: `token ${GITHUB_TOKEN}`,
+              Authorization: `token ${GITHUB_TOKENN}`,
             },
           }
         )
